@@ -3,17 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/style.css">
     <title>BeMovies</title>
 </head>
 <body>
-    <header>
-        <nav>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#"><span>be</span>movies</a>
+            </div>
             <ul>
-                <li></li>
+                <li><a href="#search">Search</a></li>
+                <li><a href="#latest">Latest</a></li>
+                <li><a href="#genres">Genres</a></li>
+                <li><a href="#" class="open-button-register">Register</a></li>
+                <li><a href="#" class="open-button-signin">Signin</a></li>
             </ul>
-        </nav>
-</header>
-    <main></main>
-    <footer></footer>
+        </div>
+    </nav>
+    <section id="search" class="search-bar-container">
+        <form class="search-bar-box" action="#">
+            <input type="text" placeholder="Search a movie" name="searchBar" id="search-bar">
+            <button type="submit" id="submit-btn"><img src="./images/submit-vector.png" alt="submit-btn"></button>
+        </form>
+
+    </section>
+    <section class="results-container">
+        <p class="search-p">Results for “<span class="search-bar-value"></span>”</p>
+        <!-- Swiper Results-->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 3</div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+
+    </section>
+    <div class="modal-register" id="modal-register">
+        <img src="./images/close.svg" alt="cross" class="button close-button">
+        <div class="btnTab">
+            <a href="#" class="signup">Signup</a>
+            <a href="#" class="login">Login</a>
+        </div>
+        <form class="register">
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <div class="remember">
+                <input type="checkbox" name="remember" id="">
+                <label for="remember">Remember me</label>
+            </div>
+            <div class="bottom">
+                <button class="register_btn" type="submit">Login</button>
+                <div class="signup">
+                    <a href="#">I forgot my password</a>
+                    <p>Not a member yer ? <a href="#">Sign up</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="logo">
+                <a href="#"><span>be</span>movies</a>
+            </div>
+            <ul>
+                <li><a href="#search">Search</a></li>
+                <li><a href="#latest">Latest</a></li>
+                <li><a href="#genres">Genres</a></li>
+                <li><a href="#" class="open-button-register">Register</a></li>
+                <li><a href="#">Signin</a></li>
+            </ul>
+            <p>&#169;2023 - All rights reserved</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/app.js"></script>
+    <!--<script src="./js/auth.js"></script>-->
 </body>
 </html>

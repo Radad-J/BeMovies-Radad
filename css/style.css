@@ -1,0 +1,307 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+* {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  font-family: "Inria Sans", sans-serif;
+  position: relative;
+  background-color: #191B20;
+}
+
+nav {
+  background-color: #141517;
+  height: 100px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+nav a {
+  color: #fff;
+}
+nav .nav-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .nav-container .logo {
+  font-size: 2.25rem;
+}
+nav .nav-container .logo span {
+  color: #C00;
+}
+nav .nav-container ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  font-size: 0.9rem;
+  letter-spacing: 0.4px;
+}
+
+.search-bar-container {
+  min-height: 180px;
+  max-width: 275px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-bar-container .search-bar-box {
+  height: 44px;
+  display: flex;
+}
+.search-bar-container .search-bar-box #search-bar {
+  width: 228px;
+  border-radius: 8px 0px 0px 8px;
+  outline: none;
+  border: none;
+  padding-left: 18px;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: black;
+  font-style: normal;
+}
+.search-bar-container .search-bar-box #search-bar::-moz-placeholder {
+  opacity: 0.9;
+}
+.search-bar-container .search-bar-box #search-bar::placeholder {
+  opacity: 0.9;
+}
+.search-bar-container .search-bar-box button {
+  border: none;
+  width: 44px;
+  background-color: #C00;
+  border-radius: 0px 8px 8px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-bar-container .search-bar-box button img {
+  width: 18px;
+  height: 14px;
+}
+
+.results-container {
+  height: 350px;
+  max-width: 1075px;
+  margin: 100px auto;
+  position: relative;
+}
+.results-container .search-p {
+  margin: 10px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+}
+
+.swiper {
+  position: static;
+  width: 100%;
+  height: 100%;
+}
+.swiper .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper .swiper-slide .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  top: 60%;
+}
+.swiper .swiper-button-next {
+  background-image: url("../images/right-arrow.svg") !important;
+  right: -50px;
+}
+.swiper .swiper-button-prev {
+  background-image: url("../images/left-arrow.svg") !important;
+  left: -50px;
+}
+.swiper .swiper-button-next::after,
+.swiper .swiper-button-prev::after {
+  content: "";
+}
+
+footer {
+  background-color: #141517;
+  height: 100px;
+  font-family: "Inria Sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+footer a {
+  color: #fff;
+}
+footer .footer-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .footer-container .logo {
+  font-size: 2.25rem;
+}
+footer .footer-container .logo span {
+  color: #C00;
+}
+footer .footer-container ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  font-size: 0.9rem;
+  letter-spacing: 0.4px;
+}
+footer .footer-container p {
+  color: #B8B8B8;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.modal-register {
+  max-width: 410px;
+  min-height: 650px;
+  background-color: black;
+}
+.modal-register .close-button {
+  width: 16px;
+  height: 16px;
+}
+.modal-register .btnTab {
+  display: flex;
+  height: 54px;
+  max-width: 290px;
+  margin: 65px 50px 54px 50px;
+}
+.modal-register .btnTab a {
+  color: #fff;
+  width: 146px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.72px;
+}
+.modal-register .btnTab .login {
+  background-color: #C00;
+  border-radius: 0px 8px 8px 0px;
+}
+.modal-register .btnTab .signup {
+  border: 1px solid #fff;
+  border-radius: 8px 0px 0px 8px;
+}
+.modal-register form {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  max-width: 290px;
+  margin: 0 auto;
+  gap: 25px;
+}
+.modal-register form input[type=text],
+.modal-register form input[type=password] {
+  border: none;
+  outline: none;
+  width: 290px;
+  height: 44px;
+  border-radius: 8px;
+  color: black;
+  font-weight: 400;
+  font-size: 1rem;
+  padding-left: 20px;
+}
+.modal-register form .remember {
+  width: 290px;
+}
+.modal-register form .remember label {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+}
+.modal-register .bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.modal-register .bottom button {
+  border: none;
+  outline: none;
+  width: 288px;
+  height: 47px;
+  max-width: 290px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  background-color: #C00;
+  border-radius: 8px;
+}
+.modal-register .bottom .signup {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  gap: 19px;
+  width: 290px;
+}
+.modal-register .bottom .signup p {
+  margin-top: 19px;
+}
+.modal-register .bottom .signup a {
+  color: #C00;
+}
+.modal-register > * {
+  margin: 0 0 0.5rem 0;
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}
