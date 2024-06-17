@@ -115,13 +115,13 @@ nav {
 }
 
 //Swiper results of search 
-.results-container {
+.results-container, .last-releases-container, .genre-container{
     height: 350px;
     max-width: 1075px;
     margin: 100px auto;
     position: relative;
 
-    .search-p {
+    .search-p, .last-releases-p, .genre-p{
         margin: 10px;
         @include textStyling(1rem, 400);
     }
