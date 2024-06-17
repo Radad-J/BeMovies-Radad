@@ -102,13 +102,13 @@ nav .nav-container ul {
   height: 14px;
 }
 
-.results-container {
+.results-container, .last-releases-container, .genre-container {
   height: 350px;
   max-width: 1075px;
   margin: 100px auto;
   position: relative;
 }
-.results-container .search-p {
+.results-container .search-p, .results-container .last-releases-p, .results-container .genre-p, .last-releases-container .search-p, .last-releases-container .last-releases-p, .last-releases-container .genre-p, .genre-container .search-p, .genre-container .last-releases-p, .genre-container .genre-p {
   margin: 10px;
   color: #fff;
   font-size: 1rem;
