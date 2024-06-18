@@ -204,7 +204,7 @@ nav {
     margin: 0 auto;
     margin-top: 100px;
     margin-bottom: 110px;
-    
+
     .genre-title {
         color: $white;
         text-align: center;
@@ -437,6 +437,122 @@ footer {
 
         &>* {
             margin: 0 0 0.5rem 0;
+        }
+    }
+}
+
+//Info movies
+.modal-movie-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    cursor: pointer;
+    display: flex; //it has to be flex when the modal activates
+    justify-content: center;
+    align-items: center;
+
+    .modal-infos-movie {
+        z-index: 2;
+        max-width: 740px;
+        height: 530px;
+        background: $navBottomColor;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        color: $white;
+        padding-top: 75px;
+        padding-left: 80px;
+        padding-right: 80px;
+
+        #img-modal-movie {
+            width: 235px;
+            height: 350px;
+
+            #img-modal-movie img {
+                width: 100%;
+                height: 100%;
+                border: 1px solid #000;
+                object-fit: cover;
+            }
+        }
+
+        #infos-movie {
+            display: flex;
+            flex-direction: column;
+            justify-items: space-between;
+            #title-movie-modal,
+            #rating-movie {
+                color: $red;
+            }
+
+            #title-movie-modal {
+                height: 24px;
+                font-size: 20px;
+                font-weight: 700;
+                text-align: left;
+                text-transform: uppercase;
+            }
+
+            #year-release-movie {
+                width: 29px;
+                height: 17px;
+                text-align: left;
+                color: $white;
+                margin-bottom: 10px;
+            }
+
+            #i-star {
+                width: 21px;
+                height: 21px;
+            }
+
+            #rating-movie {
+                width: 33px;
+                height: 26px;
+                font-weight: 700;
+                text-align: center;
+            }
+
+            #genre-movie-modal {
+                margin-top: 10px;
+                width: 102px;
+                height: 17px;
+                font-weight: 700;
+                text-align: left;
+                color: $white;
+                margin-bottom: 15px;
+            }
+
+            #description-movie-modal {
+                width: 292px;
+                height: 278px;
+                font-weight: 300;
+                text-align: left;
+                color: $white;
+            }
+
+            #cast-txt {
+                font-size: 14px;
+                font-weight: 700;
+                text-align: left;
+                width: 39px;
+                height: 17px;
+                color: $white;
+            }
+
+            #people-cast {
+                margin-left: 15px;
+                width: 244px;
+                height: 34px;
+                font-size: 14px;
+                text-align: left;
+                color: $white;
+            }
         }
     }
 }
