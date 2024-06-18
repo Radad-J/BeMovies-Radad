@@ -1,6 +1,10 @@
 @import '_variables.scss', '_mixin.scss';
 
 //Resetting
+html {
+    scroll-behavior: smooth;
+}
+
 *,
 *::before,
 *::after {
@@ -114,17 +118,39 @@ nav {
     }
 }
 
-//Swiper results of search 
-.results-container, .last-releases-container, .genre-container{
-    height: 350px;
+//Search container 
+.results-container {
     max-width: 1075px;
-    margin: 100px auto;
-    position: relative;
+    margin: 0 auto;
+    margin-top: 100px;
 
-    .search-p, .last-releases-p, .genre-p{
+    .search-p {
         margin: 10px;
         @include textStyling(1rem, 400);
     }
+}
+
+//last releases container
+.last-releases-container {
+    max-width: 1075px;
+    margin: 0 auto;
+    margin-top: 100px;
+
+    .search-p,
+    .last-releases-p {
+        margin: 10px;
+        @include textStyling(1rem, 400);
+    }
+}
+
+//Swiper results of search 
+.results-swiper-container,
+.last-releases-swiper-container,
+.genre-swiper-container {
+    height: 350px;
+    max-width: 1075px;
+    margin: 0px auto;
+    position: relative;
 }
 
 .swiper {
@@ -154,7 +180,6 @@ nav {
         background-repeat: no-repeat;
         width: 20px;
         height: 20px;
-        top: 60%;
     }
 
     .swiper-button-next {
@@ -170,6 +195,69 @@ nav {
     .swiper-button-next::after,
     .swiper-button-prev::after {
         content: '';
+    }
+}
+
+//Genre container
+.genre-container {
+    max-width: 1075px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 110px;
+    
+    .genre-title {
+        color: $white;
+        text-align: center;
+    }
+
+    .genre-p {
+        margin: 10px;
+        @include textStyling(1rem, 400);
+    }
+
+    hr {
+        color: white;
+        width: 600px;
+        margin: 0 auto;
+    }
+
+    .genre-list-div {
+        margin: 0 auto;
+        max-width: 700px;
+        display: flex;
+        align-items: center;
+        margin-top: 45px;
+        margin-bottom: 25px;
+
+        .genre-list {
+            display: flex;
+            flex-direction: row;
+            gap: 35px;
+
+            .genre-list-item {
+                border-radius: 8px;
+                padding: 7px 9px;
+                color: $white;
+                background-color: $mainPageColor;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $secondaryPageColor;
+                }
+            }
+
+            .selected {
+                background-color: $red;
+
+                &:hover {
+                    background-color: $secondRed;
+                }
+            }
+        }
+    }
+
+    .genre-swiper-container {
+        margin-top: 20px;
     }
 }
 
@@ -220,125 +308,135 @@ footer {
 }
 
 //Register 
-.modal-register {
-    //will uncomment this 4 lines after to be absolute and centered once we click on it :)
-    //position: absolute;
-    //top: 50%;
-    //left: 50%;
-    //transform: translate(-50%, -50%);
-    max-width: 410px;
-    min-height: 650px;
-    background-color: black;
+.modal-register-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    cursor: pointer;
+    display: none; //it has to be flex when the modal activates
+    justify-content: center;
+    align-items: center;
 
-    .close-button {
-        width: 16px;
-        height: 16px;
-    }
+    .modal-register {
+        position: relative;
+        max-width: 410px;
+        min-height: 650px;
+        background-color: black;
 
-    .btnTab {
-        display: flex;
-        height: 54px;
-        max-width: 290px;
-        margin: 65px 50px 54px 50px;
+        .close-button {
+            width: 16px;
+            height: 16px;
+        }
 
-        a {
-            color: $white;
-            width: 146px;
+        .btnTab {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            @include textStyling (1.5rem, 700);
-            text-transform: uppercase;
-            letter-spacing: 0.72px;
-        }
-
-        .login {
-            background-color: $red;
-            border-radius: 0px 8px 8px 0px;
-        }
-
-        .signup {
-            border: 1px solid $white;
-            border-radius: 8px 0px 0px 8px;
-        }
-
-    }
-
-    form {
-        padding: 50px;
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: center;
-        max-width: 290px;
-        margin: 0 auto;
-        gap: 25px;
-
-        input[type="text"],
-        input[type="password"] {
-            border: none;
-            outline: none;
-            width: 290px;
-            height: 44px;
-            border-radius: 8px;
-            color: black;
-            font-weight: 400;
-            font-size: 1rem;
-            padding-left: 20px;
-        }
-
-        .remember {
-            width: 290px;
-
-            label {
-                @include textStyling (1rem, 400);
-            }
-        }
-
-    }
-
-    .bottom {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 30px;
-
-        button {
-            border: none;
-            outline: none;
-            width: 288px;
-            height: 47px;
+            height: 54px;
             max-width: 290px;
-            margin: 0 auto;
-            @include textStyling (1.25rem, 700);
-            letter-spacing: 0.6px;
-            text-transform: uppercase;
-            background-color: $red;
-            border-radius: 8px;
-        }
-
-        .signup {
-            @include textStyling (0.9rem, 400);
-            gap: 19px;
-            width: 290px;
-
-            p {
-                margin-top: 19px;
-            }
+            margin: 65px 50px 54px 50px;
 
             a {
-                color: $red;
+                color: $white;
+                width: 146px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include textStyling (1.5rem, 700);
+                text-transform: uppercase;
+                letter-spacing: 0.72px;
+            }
+
+            .login {
+                background-color: $red;
+                border: 1px solid $red;
+                border-radius: 0px 8px 8px 0px;
+            }
+
+            .signup {
+                border: 1px solid $white;
+                border-right: none;
+                border-radius: 8px 0px 0px 8px;
             }
 
         }
-    }
 
-    &>* {
-        margin: 0 0 0.5rem 0;
-    }
-}
+        form {
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            max-width: 290px;
+            margin: 0 auto;
+            gap: 25px;
 
-.modal::backdrop {
-    background: rgb(0 0 0 / 0.4);
+            input[type="text"],
+            input[type="password"] {
+                border: none;
+                outline: none;
+                width: 290px;
+                height: 44px;
+                border-radius: 8px;
+                color: black;
+                font-weight: 400;
+                font-size: 1rem;
+                padding-left: 20px;
+            }
+
+            .remember {
+                width: 290px;
+
+                label {
+                    @include textStyling (1rem, 400);
+                }
+            }
+
+        }
+
+        .bottom {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 30px;
+
+            button {
+                border: none;
+                outline: none;
+                width: 288px;
+                height: 47px;
+                max-width: 290px;
+                margin: 0 auto;
+                @include textStyling (1.25rem, 700);
+                letter-spacing: 0.6px;
+                text-transform: uppercase;
+                background-color: $red;
+                border-radius: 8px;
+            }
+
+            .signup {
+                @include textStyling (0.9rem, 400);
+                gap: 19px;
+                width: 290px;
+
+                p {
+                    margin-top: 19px;
+                }
+
+                a {
+                    color: $red;
+                }
+
+            }
+        }
+
+        &>* {
+            margin: 0 0 0.5rem 0;
+        }
+    }
 }
