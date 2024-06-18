@@ -28,85 +28,104 @@
             <input type="text" placeholder="Search a movie" name="searchBar" id="search-bar">
             <button type="submit" id="submit-btn"><img src="./images/submit-vector.png" alt="submit-btn"></button>
         </form>
-
     </section>
     <section class="results-container">
         <p class="search-p">Results for “<span class="search-bar-value"></span>”</p>
         <!-- Swiper Results-->
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 3</div>
+        <div class="results-swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
+                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
+                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
+                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
+                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
+                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
+                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+    <section id="latest" class="last-releases-container">
+        <p class="last-releases-p">Last releases</p>
+        <!-- Swiper Results-->
+        <div class="last-releases-swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
+                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
+                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
+                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
+                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
+                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
+                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
         </div>
 
     </section>
-    <section class="last-releases-container">
-        <p class="last-releases-p">Last releases</p>
-        <!-- Swiper Results-->
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 3</div>
-            </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
-    </section>
-    <section class="genre-container">
+    <section id="genres" class="genre-container">
         <div class="genre-section">
-            <h3>Movies by genre</h3>
+            <h3 class="genre-title">Movies by genre</h3>
         </div>
+        <div class="genre-list-div">
+            <ul class="genre-list">
+                <li class="selected genre-list-item">Comedy</li>
+                <li class="genre-list-item">Drama</li>
+                <li class="genre-list-item">Action</li>
+                <li class="genre-list-item">Romance</li>
+                <li class="genre-list-item">Fantasy</li>
+                <li class="genre-list-item">Animation</li>
+            </ul>
+        </div>
+        <hr>
         <p class="genre-p">Genre</p>
         <!-- Swiper Results-->
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 3</div>
+        <div class="genre-swiper-container">
+            <div class="swiper mySwiper genre-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
+                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
+                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
+                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
+                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
+                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
+                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
         </div>
     </section>
-    <div class="modal-register" id="modal-register">
-        <img src="./images/close.svg" alt="cross" class="button close-button">
-        <div class="btnTab">
-            <a href="#" class="signup">Signup</a>
-            <a href="#" class="login">Login</a>
-        </div>
-        <form class="register">
-            <input type="text" name="username" placeholder="Username">
-            <input type="password" name="password" placeholder="Password">
-            <div class="remember">
-                <input type="checkbox" name="remember" id="">
-                <label for="remember">Remember me</label>
+    <div class="modal-register-overlay">
+        <div class="modal-register" id="modal-register">
+            <img src="./images/close.svg" alt="cross" class="button close-button">
+            <div class="btnTab">
+                <a href="#" class="signup">Signup</a>
+                <a href="#" class="login">Login</a>
             </div>
-            <div class="bottom">
-                <button class="register_btn" type="submit">Login</button>
-                <div class="signup">
-                    <a href="#">I forgot my password</a>
-                    <p>Not a member yer ? <a href="#">Sign up</a></p>
+            <form class="register">
+                <input type="text" name="username" placeholder="Username">
+                <input type="password" name="password" placeholder="Password">
+                <div class="remember">
+                    <input type="checkbox" name="remember" id="">
+                    <label for="remember">Remember me</label>
                 </div>
-            </div>
-        </form>
+                <div class="bottom">
+                    <button class="register_btn" type="submit">Login</button>
+                    <div class="signup">
+                        <a href="#">I forgot my password</a>
+                        <p>Not a member yer ? <a href="#">Sign up</a></p>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
+
     <footer>
         <div class="footer-container">
             <div class="logo">

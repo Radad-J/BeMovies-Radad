@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 *,
 *::before,
 *::after {
@@ -102,18 +106,40 @@ nav .nav-container ul {
   height: 14px;
 }
 
-.results-container, .last-releases-container, .genre-container {
-  height: 350px;
+.results-container {
   max-width: 1075px;
-  margin: 100px auto;
-  position: relative;
+  margin: 0 auto;
+  margin-top: 100px;
 }
-.results-container .search-p, .results-container .last-releases-p, .results-container .genre-p, .last-releases-container .search-p, .last-releases-container .last-releases-p, .last-releases-container .genre-p, .genre-container .search-p, .genre-container .last-releases-p, .genre-container .genre-p {
+.results-container .search-p {
   margin: 10px;
   color: #fff;
   font-size: 1rem;
   font-weight: 400;
   font-family: "Inter", sans-serif;
+}
+
+.last-releases-container {
+  max-width: 1075px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.last-releases-container .search-p,
+.last-releases-container .last-releases-p {
+  margin: 10px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+}
+
+.results-swiper-container,
+.last-releases-swiper-container,
+.genre-swiper-container {
+  height: 350px;
+  max-width: 1075px;
+  margin: 0px auto;
+  position: relative;
 }
 
 .swiper {
@@ -142,7 +168,6 @@ nav .nav-container ul {
   background-repeat: no-repeat;
   width: 20px;
   height: 20px;
-  top: 60%;
 }
 .swiper .swiper-button-next {
   background-image: url("../images/right-arrow.svg") !important;
@@ -155,6 +180,61 @@ nav .nav-container ul {
 .swiper .swiper-button-next::after,
 .swiper .swiper-button-prev::after {
   content: "";
+}
+
+.genre-container {
+  max-width: 1075px;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 110px;
+}
+.genre-container .genre-title {
+  color: #fff;
+  text-align: center;
+}
+.genre-container .genre-p {
+  margin: 10px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+}
+.genre-container hr {
+  color: white;
+  width: 600px;
+  margin: 0 auto;
+}
+.genre-container .genre-list-div {
+  margin: 0 auto;
+  max-width: 700px;
+  display: flex;
+  align-items: center;
+  margin-top: 45px;
+  margin-bottom: 25px;
+}
+.genre-container .genre-list-div .genre-list {
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+}
+.genre-container .genre-list-div .genre-list .genre-list-item {
+  border-radius: 8px;
+  padding: 7px 9px;
+  color: #fff;
+  background-color: #191B20;
+  cursor: pointer;
+}
+.genre-container .genre-list-div .genre-list .genre-list-item:hover {
+  background-color: #23252a;
+}
+.genre-container .genre-list-div .genre-list .selected {
+  background-color: #C00;
+}
+.genre-container .genre-list-div .genre-list .selected:hover {
+  background-color: rgb(164, 3, 3);
+}
+.genre-container .genre-swiper-container {
+  margin-top: 20px;
 }
 
 footer {
@@ -194,22 +274,38 @@ footer .footer-container p {
   font-weight: 300;
 }
 
-.modal-register {
+.modal-register-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.modal-register-overlay .modal-register {
+  position: relative;
   max-width: 410px;
   min-height: 650px;
   background-color: black;
 }
-.modal-register .close-button {
+.modal-register-overlay .modal-register .close-button {
   width: 16px;
   height: 16px;
 }
-.modal-register .btnTab {
+.modal-register-overlay .modal-register .btnTab {
   display: flex;
   height: 54px;
   max-width: 290px;
   margin: 65px 50px 54px 50px;
 }
-.modal-register .btnTab a {
+.modal-register-overlay .modal-register .btnTab a {
   color: #fff;
   width: 146px;
   display: flex;
@@ -222,15 +318,17 @@ footer .footer-container p {
   text-transform: uppercase;
   letter-spacing: 0.72px;
 }
-.modal-register .btnTab .login {
+.modal-register-overlay .modal-register .btnTab .login {
   background-color: #C00;
+  border: 1px solid #C00;
   border-radius: 0px 8px 8px 0px;
 }
-.modal-register .btnTab .signup {
+.modal-register-overlay .modal-register .btnTab .signup {
   border: 1px solid #fff;
+  border-right: none;
   border-radius: 8px 0px 0px 8px;
 }
-.modal-register form {
+.modal-register-overlay .modal-register form {
   padding: 50px;
   display: flex;
   flex-direction: column;
@@ -240,8 +338,8 @@ footer .footer-container p {
   margin: 0 auto;
   gap: 25px;
 }
-.modal-register form input[type=text],
-.modal-register form input[type=password] {
+.modal-register-overlay .modal-register form input[type=text],
+.modal-register-overlay .modal-register form input[type=password] {
   border: none;
   outline: none;
   width: 290px;
@@ -252,23 +350,23 @@ footer .footer-container p {
   font-size: 1rem;
   padding-left: 20px;
 }
-.modal-register form .remember {
+.modal-register-overlay .modal-register form .remember {
   width: 290px;
 }
-.modal-register form .remember label {
+.modal-register-overlay .modal-register form .remember label {
   color: #fff;
   font-size: 1rem;
   font-weight: 400;
   font-family: "Inter", sans-serif;
 }
-.modal-register .bottom {
+.modal-register-overlay .modal-register .bottom {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 30px;
 }
-.modal-register .bottom button {
+.modal-register-overlay .modal-register .bottom button {
   border: none;
   outline: none;
   width: 288px;
@@ -284,7 +382,7 @@ footer .footer-container p {
   background-color: #C00;
   border-radius: 8px;
 }
-.modal-register .bottom .signup {
+.modal-register-overlay .modal-register .bottom .signup {
   color: #fff;
   font-size: 0.9rem;
   font-weight: 400;
@@ -292,16 +390,12 @@ footer .footer-container p {
   gap: 19px;
   width: 290px;
 }
-.modal-register .bottom .signup p {
+.modal-register-overlay .modal-register .bottom .signup p {
   margin-top: 19px;
 }
-.modal-register .bottom .signup a {
+.modal-register-overlay .modal-register .bottom .signup a {
   color: #C00;
 }
-.modal-register > * {
+.modal-register-overlay .modal-register > * {
   margin: 0 0 0.5rem 0;
-}
-
-.modal::backdrop {
-  background: rgba(0, 0, 0, 0.4);
 }
