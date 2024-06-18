@@ -416,16 +416,25 @@ footer .footer-container p {
   align-items: center;
 }
 .modal-movie-overlay .modal-infos-movie {
+  position: relative;
   z-index: 2;
   max-width: 740px;
   height: 530px;
   background: #141517;
   display: grid;
+  gap: 40px;
   grid-template-columns: 1fr 1fr;
   color: #fff;
   padding-top: 75px;
   padding-left: 80px;
   padding-right: 80px;
+}
+.modal-movie-overlay .modal-infos-movie .close-btn-movie {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 5px;
+  top: 5px;
 }
 .modal-movie-overlay .modal-infos-movie #img-modal-movie {
   width: 235px;
@@ -439,66 +448,64 @@ footer .footer-container p {
      object-fit: cover;
 }
 .modal-movie-overlay .modal-infos-movie #infos-movie {
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-items: space-between;
+  gap: 15px;
 }
 .modal-movie-overlay .modal-infos-movie #infos-movie #title-movie-modal,
 .modal-movie-overlay .modal-infos-movie #infos-movie #rating-movie {
   color: #C00;
 }
 .modal-movie-overlay .modal-infos-movie #infos-movie #title-movie-modal {
-  height: 24px;
   font-size: 20px;
   font-weight: 700;
   text-align: left;
   text-transform: uppercase;
 }
 .modal-movie-overlay .modal-infos-movie #infos-movie #year-release-movie {
-  width: 29px;
-  height: 17px;
   text-align: left;
   color: #fff;
   margin-bottom: 10px;
 }
 .modal-movie-overlay .modal-infos-movie #infos-movie #i-star {
   width: 21px;
-  height: 21px;
 }
 .modal-movie-overlay .modal-infos-movie #infos-movie #rating-movie {
-  width: 33px;
-  height: 26px;
+  font-size: 28px;
   font-weight: 700;
   text-align: center;
 }
 .modal-movie-overlay .modal-infos-movie #infos-movie #genre-movie-modal {
   margin-top: 10px;
-  width: 102px;
-  height: 17px;
   font-weight: 700;
   text-align: left;
   color: #fff;
   margin-bottom: 15px;
+  text-transform: uppercase;
 }
 .modal-movie-overlay .modal-infos-movie #infos-movie #description-movie-modal {
   width: 292px;
-  height: 278px;
   font-weight: 300;
   text-align: left;
   color: #fff;
 }
-.modal-movie-overlay .modal-infos-movie #infos-movie #cast-txt {
+.modal-movie-overlay .modal-infos-movie #infos-movie .cast-div {
+  display: flex;
+  flex-direction: row;
+}
+.modal-movie-overlay .modal-infos-movie #infos-movie .cast-div #cast-txt {
+  white-space: nowrap;
   font-size: 14px;
   font-weight: 700;
   text-align: left;
   width: 39px;
-  height: 17px;
   color: #fff;
 }
 .modal-movie-overlay .modal-infos-movie #infos-movie #people-cast {
   margin-left: 15px;
   width: 244px;
-  height: 34px;
   font-size: 14px;
   text-align: left;
   color: #fff;

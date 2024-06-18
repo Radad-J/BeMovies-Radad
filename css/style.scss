@@ -458,16 +458,26 @@ footer {
     align-items: center;
 
     .modal-infos-movie {
+        position: relative;
         z-index: 2;
         max-width: 740px;
         height: 530px;
         background: $navBottomColor;
         display: grid;
+        gap: 40px;
         grid-template-columns: 1fr 1fr;
         color: $white;
         padding-top: 75px;
         padding-left: 80px;
         padding-right: 80px;
+
+        .close-btn-movie {
+            position: absolute;
+            height: 16px;
+            width: 16px;
+            left: 5px;
+            top: 5px;
+        }
 
         #img-modal-movie {
             width: 235px;
@@ -482,16 +492,18 @@ footer {
         }
 
         #infos-movie {
+            min-height: 400px;
             display: flex;
             flex-direction: column;
             justify-items: space-between;
+            gap: 15px;
+
             #title-movie-modal,
             #rating-movie {
                 color: $red;
             }
 
             #title-movie-modal {
-                height: 24px;
                 font-size: 20px;
                 font-weight: 700;
                 text-align: left;
@@ -499,8 +511,6 @@ footer {
             }
 
             #year-release-movie {
-                width: 29px;
-                height: 17px;
                 text-align: left;
                 color: $white;
                 margin-bottom: 10px;
@@ -508,47 +518,46 @@ footer {
 
             #i-star {
                 width: 21px;
-                height: 21px;
             }
 
             #rating-movie {
-                width: 33px;
-                height: 26px;
+                font-size: 28px;
                 font-weight: 700;
                 text-align: center;
             }
 
             #genre-movie-modal {
                 margin-top: 10px;
-                width: 102px;
-                height: 17px;
                 font-weight: 700;
                 text-align: left;
                 color: $white;
                 margin-bottom: 15px;
+                text-transform: uppercase;
             }
 
             #description-movie-modal {
                 width: 292px;
-                height: 278px;
                 font-weight: 300;
                 text-align: left;
                 color: $white;
             }
+            .cast-div {
+                display: flex;
+                flex-direction: row;
 
-            #cast-txt {
-                font-size: 14px;
-                font-weight: 700;
-                text-align: left;
-                width: 39px;
-                height: 17px;
-                color: $white;
+                #cast-txt {
+                    white-space: nowrap ;
+                    font-size: 14px;
+                    font-weight: 700;
+                    text-align: left;
+                    width: 39px;
+                    color: $white;
+                }
             }
 
             #people-cast {
                 margin-left: 15px;
                 width: 244px;
-                height: 34px;
                 font-size: 14px;
                 text-align: left;
                 color: $white;
