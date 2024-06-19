@@ -330,6 +330,8 @@ footer {
         background-color: black;
 
         .close-button {
+            margin-top: 10px;
+            margin-left: 10px;
             width: 16px;
             height: 16px;
         }
@@ -353,7 +355,7 @@ footer {
             }
 
             .login {
-                border-radius: 0px 8px 8px 0px ;
+                border-radius: 0px 8px 8px 0px;
             }
 
             .signup {
@@ -374,7 +376,8 @@ footer {
             display: none !important; //remove this line to dispaly flex when needed
         }
 
-        .register-form, .login-form {
+        .register-form,
+        .login-form {
             padding: 50px;
             display: flex;
             flex-direction: column;
@@ -398,7 +401,8 @@ footer {
                 padding-left: 20px;
             }
 
-            .remember-div, .terms-conditions-div{
+            .remember-div,
+            .terms-conditions-div {
                 width: 290px;
 
                 label {
@@ -429,7 +433,8 @@ footer {
                 border-radius: 8px;
             }
 
-            .signup, .login-reminder{
+            .signup,
+            .login-reminder {
                 @include textStyling (0.9rem, 400);
                 gap: 19px;
                 width: 290px;
@@ -551,12 +556,13 @@ footer {
                 text-align: left;
                 color: $white;
             }
+
             .cast-div {
                 display: flex;
                 flex-direction: row;
 
                 #cast-txt {
-                    white-space: nowrap ;
+                    white-space: nowrap;
                     font-size: 14px;
                     font-weight: 700;
                     text-align: left;
@@ -608,11 +614,12 @@ footer {
         .hover-genre {
             @include textStyling(14px, 500);
         }
-        
+
         .hover-star {
             width: 35px;
             height: 35px;
         }
+
         .hover-score {
             @include textStyling(32px, 700);
             color: $red;
@@ -620,7 +627,7 @@ footer {
 
         &:hover {
             background-color: rgba(0, 0, 0, 0.8); // Griser l'arrière-plan
-            opacity: 1; 
+            opacity: 1;
         }
     }
 }

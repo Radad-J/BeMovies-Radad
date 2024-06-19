@@ -296,6 +296,8 @@ footer .footer-container p {
   background-color: black;
 }
 .modal-register-overlay .modal-register .close-button {
+  margin-top: 10px;
+  margin-left: 10px;
   width: 16px;
   height: 16px;
 }
@@ -332,7 +334,8 @@ footer .footer-container p {
 .modal-register-overlay .modal-register .login-form {
   display: none !important;
 }
-.modal-register-overlay .modal-register .register-form, .modal-register-overlay .modal-register .login-form {
+.modal-register-overlay .modal-register .register-form,
+.modal-register-overlay .modal-register .login-form {
   padding: 50px;
   display: flex;
   flex-direction: column;
@@ -344,7 +347,8 @@ footer .footer-container p {
 }
 .modal-register-overlay .modal-register .register-form input[type=text],
 .modal-register-overlay .modal-register .register-form input[type=password],
-.modal-register-overlay .modal-register .register-form input[type=email], .modal-register-overlay .modal-register .login-form input[type=text],
+.modal-register-overlay .modal-register .register-form input[type=email],
+.modal-register-overlay .modal-register .login-form input[type=text],
 .modal-register-overlay .modal-register .login-form input[type=password],
 .modal-register-overlay .modal-register .login-form input[type=email] {
   border: none;
@@ -357,10 +361,16 @@ footer .footer-container p {
   font-size: 1rem;
   padding-left: 20px;
 }
-.modal-register-overlay .modal-register .register-form .remember-div, .modal-register-overlay .modal-register .register-form .terms-conditions-div, .modal-register-overlay .modal-register .login-form .remember-div, .modal-register-overlay .modal-register .login-form .terms-conditions-div {
+.modal-register-overlay .modal-register .register-form .remember-div,
+.modal-register-overlay .modal-register .register-form .terms-conditions-div,
+.modal-register-overlay .modal-register .login-form .remember-div,
+.modal-register-overlay .modal-register .login-form .terms-conditions-div {
   width: 290px;
 }
-.modal-register-overlay .modal-register .register-form .remember-div label, .modal-register-overlay .modal-register .register-form .terms-conditions-div label, .modal-register-overlay .modal-register .login-form .remember-div label, .modal-register-overlay .modal-register .login-form .terms-conditions-div label {
+.modal-register-overlay .modal-register .register-form .remember-div label,
+.modal-register-overlay .modal-register .register-form .terms-conditions-div label,
+.modal-register-overlay .modal-register .login-form .remember-div label,
+.modal-register-overlay .modal-register .login-form .terms-conditions-div label {
   color: #fff;
   font-size: 1rem;
   font-weight: 400;
@@ -389,7 +399,8 @@ footer .footer-container p {
   background-color: #C00;
   border-radius: 8px;
 }
-.modal-register-overlay .modal-register .bottom .signup, .modal-register-overlay .modal-register .bottom .login-reminder {
+.modal-register-overlay .modal-register .bottom .signup,
+.modal-register-overlay .modal-register .bottom .login-reminder {
   color: #fff;
   font-size: 0.9rem;
   font-weight: 400;
@@ -397,10 +408,12 @@ footer .footer-container p {
   gap: 19px;
   width: 290px;
 }
-.modal-register-overlay .modal-register .bottom .signup p, .modal-register-overlay .modal-register .bottom .login-reminder p {
+.modal-register-overlay .modal-register .bottom .signup p,
+.modal-register-overlay .modal-register .bottom .login-reminder p {
   margin-top: 19px;
 }
-.modal-register-overlay .modal-register .bottom .signup a, .modal-register-overlay .modal-register .bottom .login-reminder a {
+.modal-register-overlay .modal-register .bottom .signup a,
+.modal-register-overlay .modal-register .bottom .login-reminder a {
   color: #C00;
 }
 .modal-register-overlay .modal-register > * {
