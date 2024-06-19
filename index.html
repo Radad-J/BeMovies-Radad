@@ -1,165 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>BeMovies</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav>
-        <div class="nav-container">
-            <div class="logo">
-                <a href="#"><span>be</span>movies</a>
-            </div>
-            <ul>
-                <li><a href="#search">Search</a></li>
-                <li><a href="#latest">Latest</a></li>
-                <li><a href="#genres">Genres</a></li>
-                <li><a href="#" class="open-button-register">Register</a></li>
-                <li><a href="#" class="open-button-signin">Signin</a></li>
-            </ul>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="#"><span>be</span>movies</a>
         </div>
+        <ul>
+          <li><a href="#search">Search</a></li>
+          <li><a href="#latest">Latest</a></li>
+          <li><a href="#genres">Genres</a></li>
+          <li><a href="#" class="open-button-register">Register</a></li>
+          <li><a href="#" class="open-button-signin">Signin</a></li>
+        </ul>
+      </div>
     </nav>
     <section id="search" class="search-bar-container">
-        <form class="search-bar-box" action="#">
-            <input type="text" placeholder="Search a movie" name="searchBar" id="search-bar">
-            <button type="submit" id="submit-btn"><img src="./images/submit-vector.png" alt="submit-btn"></button>
-        </form>
+      <form class="search-bar-box" action="#">
+        <input
+          type="text"
+          placeholder="Search a movie"
+          name="searchBar"
+          id="search-bar"
+        />
+        <button type="submit" id="submit-btn">
+          <img src="./images/submit-vector.png" alt="submit-btn" />
+        </button>
+      </form>
     </section>
     <section class="results-container">
-        <p class="search-p">Results for “<span class="search-bar-value"></span>”</p>
-        <!-- Swiper Results-->
-        <div class="results-swiper-container">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
-                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
-                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
-                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
-                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
-                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
-                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
-                </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+      <p class="search-p">
+        Results for “<span class="search-bar-value"></span>”
+      </p>
+      <!-- Swiper Results-->
+      <div class="results-swiper-container">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./images/barbie.jpeg" alt="barbie" />
+              <div class="info">
+                <h3 class="hover-title">The God Father</h3>
+                <h4 class="hover-year">1990</h4>
+                <p class="hover-genre">Crime / Drama / Thriller</p>
+                <img class="hover-star" src="./images/star.svg" alt="star" />
+                <p class="hover-score">7.4</p>
+              </div>
             </div>
+            <div class="swiper-slide">
+              <img src="./images/barbie.jpeg" alt="barbie" />
+              <div class="info">
+                <h3 class="hover-title">The God Father</h3>
+                <h4 class="hover-year">1990</h4>
+                <p class="hover-genre">Crime / Drama / Thriller</p>
+                <img class="hover-star" src="./images/star.svg" alt="star" />
+                <p class="hover-score">7.4</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/barbie.jpeg" alt="barbie" />
+              <div class="info">
+                <h3 class="hover-title">The God Father</h3>
+                <h4 class="hover-year">1990</h4>
+                <p class="hover-genre">Crime / Drama / Thriller</p>
+                <img class="hover-star" src="./images/star.svg" alt="star">
+                <p class="hover-score">7.4</p>
+            </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/barbie.jpeg" alt="barbie" />
+              <div class="info">Info for Slide 4</div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/barbie.jpeg" alt="barbie" />
+              <div class="info">Info for Slide 5</div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/barbie.jpeg" alt="barbie" />
+              <div class="info">Info for Slide 6</div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/barbie.jpeg" alt="barbie" />
+              <div class="info">Info for Slide 7</div>
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
+      </div>
     </section>
     <section id="latest" class="last-releases-container">
-        <p class="last-releases-p">Last releases</p>
-        <!-- Swiper Results-->
-        <div class="last-releases-swiper-container">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
-                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
-                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
-                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
-                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
-                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
-                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
-                </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+      <p class="last-releases-p">Last releases</p>
+      <!-- Swiper Results-->
+      <div class="last-releases-swiper-container">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./images/barbie.jpeg" alt="barbie" />
             </div>
+            <div class="swiper-slide">
+              <img src="./images/barbie.jpeg" alt="barbie" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/barbie.jpeg" alt="barbie" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/barbie.jpeg" alt="barbie" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/barbie.jpeg" alt="barbie" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/barbie.jpeg" alt="barbie" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/barbie.jpeg" alt="barbie" />
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
-
+      </div>
     </section>
     <section id="genres" class="genre-container">
-        <div class="genre-section">
-            <h3 class="genre-title">Movies by genre</h3>
-        </div>
-        <div class="genre-list-div">
-            <ul class="genre-list">
-                <li class="selected genre-list-item">Comedy</li>
-                <li class="genre-list-item">Drama</li>
-                <li class="genre-list-item">Action</li>
-                <li class="genre-list-item">Romance</li>
-                <li class="genre-list-item">Fantasy</li>
-                <li class="genre-list-item">Animation</li>
-            </ul>
-        </div>
-        <hr>
-        <p class="genre-p">Genre</p>
-        <!-- Swiper Results-->
-        <div class="genre-swiper-container">
-            <div class="swiper mySwiper genre-swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
-                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
-                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
-                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
-                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
-                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
-                    <div class="swiper-slide"><img src="./images/barbie.jpeg" alt="barbie"></div>
-                </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+      <div class="genre-section">
+        <h3 class="genre-title">Movies by genre</h3>
+      </div>
+      <div class="genre-list-div">
+        <ul class="genre-list">
+          <li class="selected genre-list-item">Comedy</li>
+          <li class="genre-list-item">Drama</li>
+          <li class="genre-list-item">Action</li>
+          <li class="genre-list-item">Romance</li>
+          <li class="genre-list-item">Fantasy</li>
+          <li class="genre-list-item">Animation</li>
+        </ul>
+      </div>
+      <hr />
+      <p class="genre-p">Genre</p>
+      <!-- Swiper Results-->
+      <div class="genre-swiper-container">
+        <div class="swiper mySwiper genre-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./images/barbie.jpeg" alt="barbie" />
             </div>
+            <div class="swiper-slide">
+              <img src="./images/barbie.jpeg" alt="barbie" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/barbie.jpeg" alt="barbie" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/barbie.jpeg" alt="barbie" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/barbie.jpeg" alt="barbie" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/barbie.jpeg" alt="barbie" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/barbie.jpeg" alt="barbie" />
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
+      </div>
     </section>
     <div class="modal-movie-overlay">
-        <div class="modal-infos-movie">
-            <img class="close-btn-movie" src="./images/close.svg" alt="">
-            <div id="img-modal-movie">
-                <img src="images/barbie.jpeg" alt="">
-            </div>
-            <div id="infos-movie">
-                <h2 id="title-movie-modal">The godfather</h2>
-                <h3 id="year-release-movie">1972</h3>
-                <div><img src="./images/star.svg" alt="" id="i-star"> <span id="rating-movie">8.7</span></div>
-                <p id="genre-movie-modal"> Crime/Drama</p>
-                <p id="description-movie-modal">Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.</p>
-                <div class="cast-div"><span id="cast-txt">CAST :</span><span id="people-cast"> Marlon Brando, Al Pacino, James Caan, Robert Duvall</span>
-                    </div>
-            </div>
+      <div class="modal-infos-movie">
+        <img class="close-btn-movie" src="./images/close.svg" alt="" />
+        <div id="img-modal-movie">
+          <img src="images/barbie.jpeg" alt="" />
         </div>
+        <div id="infos-movie">
+          <h2 id="title-movie-modal">The godfather</h2>
+          <h3 id="year-release-movie">1972</h3>
+          <div>
+            <img src="./images/star.svg" alt="" id="i-star" />
+            <span id="rating-movie">8.7</span>
+          </div>
+          <p id="genre-movie-modal">Crime/Drama</p>
+          <p id="description-movie-modal">
+            Spanning the years 1945 to 1955, a chronicle of the fictional
+            Italian-American Corleone crime family. When organized crime family
+            patriarch, Vito Corleone barely survives an attempt on his life, his
+            youngest son, Michael steps in to take care of the would-be killers,
+            launching a campaign of bloody revenge.
+          </p>
+          <div class="cast-div">
+            <span id="cast-txt">CAST :</span
+            ><span id="people-cast">
+              Marlon Brando, Al Pacino, James Caan, Robert Duvall</span
+            >
+          </div>
+        </div>
+      </div>
     </div>
     <div class="modal-register-overlay">
-        <div class="modal-register" id="modal-register">
-            <img src="./images/close.svg" alt="cross" class="button close-button">
-            <div class="btnTab">
-                <a href="#" class="signup">Signup</a>
-                <a href="#" class="login">Login</a>
-            </div>
-            <form class="register">
-                <input type="text" name="username" placeholder="Username">
-                <input type="password" name="password" placeholder="Password">
-                <div class="remember">
-                    <input type="checkbox" name="remember" id="">
-                    <label for="remember">Remember me</label>
-                </div>
-                <div class="bottom">
-                    <button class="register_btn" type="submit">Login</button>
-                    <div class="signup">
-                        <a href="#">I forgot my password</a>
-                        <p>Not a member yer ? <a href="#">Sign up</a></p>
-                    </div>
-                </div>
-            </form>
+      <div class="modal-register" id="modal-register">
+        <img src="./images/close.svg" alt="cross" class="button close-button" />
+        <div class="btnTab">
+          <a href="#" class="signup">Signup</a>
+          <a href="#" class="login">Login</a>
         </div>
+        <form class="register">
+          <input type="text" name="username" placeholder="Username" />
+          <input type="password" name="password" placeholder="Password" />
+          <div class="remember">
+            <input type="checkbox" name="remember" id="" />
+            <label for="remember">Remember me</label>
+          </div>
+          <div class="bottom">
+            <button class="register_btn" type="submit">Login</button>
+            <div class="signup">
+              <a href="#">I forgot my password</a>
+              <p>Not a member yer ? <a href="#">Sign up</a></p>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
 
     <footer>
-        <div class="footer-container">
-            <div class="logo">
-                <a href="#"><span>be</span>movies</a>
-            </div>
-            <ul>
-                <li><a href="#search">Search</a></li>
-                <li><a href="#latest">Latest</a></li>
-                <li><a href="#genres">Genres</a></li>
-                <li><a href="#" class="open-button-register">Register</a></li>
-                <li><a href="#">Signin</a></li>
-            </ul>
-            <p>&#169;2023 - All rights reserved</p>
+      <div class="footer-container">
+        <div class="logo">
+          <a href="#"><span>be</span>movies</a>
         </div>
+        <ul>
+          <li><a href="#search">Search</a></li>
+          <li><a href="#latest">Latest</a></li>
+          <li><a href="#genres">Genres</a></li>
+          <li><a href="#" class="open-button-register">Register</a></li>
+          <li><a href="#">Signin</a></li>
+        </ul>
+        <p>&#169;2023 - All rights reserved</p>
+      </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/app.js"></script>
     <!--<script src="./js/auth.js"></script>-->
-</body>
+  </body>
 </html>

@@ -411,7 +411,7 @@ footer .footer-container p {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
   cursor: pointer;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -509,4 +509,56 @@ footer .footer-container p {
   font-size: 14px;
   text-align: left;
   color: #fff;
+}
+
+.swiper-slide .info {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+  padding: 10px 30px;
+  text-align: center;
+}
+.swiper-slide .info .hover-title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+}
+.swiper-slide .info .hover-year {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  color: #B8B8B8;
+}
+.swiper-slide .info .hover-genre {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+}
+.swiper-slide .info .hover-star {
+  width: 35px;
+  height: 35px;
+}
+.swiper-slide .info .hover-score {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  color: #C00;
+}
+.swiper-slide .info:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 1;
 }
