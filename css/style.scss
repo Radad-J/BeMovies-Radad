@@ -453,7 +453,7 @@ footer {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
     cursor: pointer;
-    display: flex; //it has to be flex when the modal activates
+    display: none; //it has to be flex when the modal activates
     justify-content: center;
     align-items: center;
 
@@ -562,6 +562,55 @@ footer {
                 text-align: left;
                 color: $white;
             }
+        }
+    }
+}
+
+//Swiper Hover
+.swiper-slide {
+    .info {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        height: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        //background: rgba(0, 0, 0, 0.1); // Fond semi-transparent
+        color: white;
+        opacity: 0; // Masquer par défaut
+        transition: opacity 0.3s;
+        padding: 10px 30px;
+        text-align: center;
+
+        .hover-title {
+            @include textStyling(20px, 700);
+        }
+
+        .hover-year {
+            @include textStyling(20px, 700);
+            color: $grey;
+        }
+
+        .hover-genre {
+            @include textStyling(14px, 500);
+        }
+        
+        .hover-star {
+            width: 35px;
+            height: 35px;
+        }
+        .hover-score {
+            @include textStyling(32px, 700);
+            color: $red;
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.8); // Griser l'arrière-plan
+            opacity: 1; 
         }
     }
 }
