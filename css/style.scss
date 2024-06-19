@@ -319,7 +319,7 @@ footer {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
     cursor: pointer;
-    display: none; //it has to be flex when the modal activates
+    display: flex; //it has to be flex when the modal activates
     justify-content: center;
     align-items: center;
 
@@ -349,23 +349,32 @@ footer {
                 @include textStyling (1.5rem, 700);
                 text-transform: uppercase;
                 letter-spacing: 0.72px;
+                border: 1px solid $white;
             }
 
             .login {
-                background-color: $red;
-                border: 1px solid $red;
-                border-radius: 0px 8px 8px 0px;
+                border-radius: 0px 8px 8px 0px ;
             }
 
             .signup {
-                border: 1px solid $white;
-                border-right: none;
                 border-radius: 8px 0px 0px 8px;
             }
 
+            .active {
+                background-color: $red;
+                border: 1px solid $red !important;
+            }
         }
 
-        form {
+        .register-form {
+            //display: none !important; //remove this line to dispaly flex when needed
+        }
+
+        .login-form {
+            display: none !important; //remove this line to dispaly flex when needed
+        }
+
+        .register-form, .login-form {
             padding: 50px;
             display: flex;
             flex-direction: column;
@@ -376,7 +385,8 @@ footer {
             gap: 25px;
 
             input[type="text"],
-            input[type="password"] {
+            input[type="password"],
+            input[type="email"] {
                 border: none;
                 outline: none;
                 width: 290px;
@@ -388,7 +398,7 @@ footer {
                 padding-left: 20px;
             }
 
-            .remember {
+            .remember-div, .terms-conditions-div{
                 width: 290px;
 
                 label {
@@ -419,7 +429,7 @@ footer {
                 border-radius: 8px;
             }
 
-            .signup {
+            .signup, .login-reminder{
                 @include textStyling (0.9rem, 400);
                 gap: 19px;
                 width: 290px;
