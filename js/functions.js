@@ -1,4 +1,13 @@
-import { movieSearchUrl, movieFindUrl, imageSearchUrl, creditsUrl, genresSearchUrl, genresList, latestSearchurl} from "./constants.js";
+import {
+    movieSearchUrl,
+    movieFindUrl,
+    imageSearchUrl,
+    creditsUrl,
+    genresSearchUrl,
+    genresList,
+    latestSearchurl,
+    latestSearchurl2,
+} from "./constants.js";
 import authToken from "./auth.js";
 async function queryMovieDB(url, authToken) {
     const response = await fetch(url, {
@@ -14,8 +23,9 @@ async function queryMovieDB(url, authToken) {
 }
 
 function getTodayDate() {
-    let milli = new Date;
-    let result = milli.getFullYear() + "-" + milli.getMonth() + "-" + milli.getDate();
+    let milli = new Date();
+    let result =
+        milli.getFullYear() + "-" + milli.getMonth() + "-" + milli.getDate();
     return result;
 }
 
@@ -23,7 +33,7 @@ export function initSwiper() {
     let swiperOptions = {
         // Optional parameters
         direction: "horizontal",
-        loop: true,
+        // loop: true,
         slidesPerGroup: 1,
         slidesPerView: 1,
         breakpoints: {
@@ -37,6 +47,7 @@ export function initSwiper() {
                 slidesPerView: 4,
             },
         },
+        // loopAdditionalSlides: 4,
         spaceBetween: 30,
 
         // Navigation arrows
@@ -44,8 +55,8 @@ export function initSwiper() {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
-    }
-    let swiper = new Swiper(`.mySwiper`, swiperOptions);
+    };
+    let swiper = new Swiper(`.results-swiper`, swiperOptions);
 
     let swiper1 = new Swiper(`.genre-swiper`, swiperOptions);
 
@@ -91,26 +102,28 @@ export default async function swiperFactory(
     let urlList = [
         movieSearchUrl + searchAppend,
         latestSearchurl.replace("replaceDateHere", getTodayDate()),
-        genresSearchUrl.replace("replaceDateHere", getTodayDate()).replace("replaceGenreHere", genreAppend),
+        genresSearchUrl
+            .replace("replaceDateHere", getTodayDate())
+            .replace("replaceGenreHere", genreAppend),
     ];
     let url = urlList[typeList.indexOf(type)];
-    console.log(url);
     let resultMovieList = await queryMovieDB(url, token);
     let movieList = resultMovieList.results;
     let swiperChosen = document.querySelector(`.${swiperSig}`);
-    //to do, figure out the format of the hover
     let slideContainer = swiperChosen.querySelector(".swiper-wrapper");
     slideContainer.innerHTML = "";
-    console.log(movieList, "test");
-    for (let i = 0; i < (movieList.length > 8 ? 8 : movieList.length); i++) {
+    console.log(movieList.length)
+    for (
+        let i = 0;
+        i < movieList.length;
+        i++
+    ) {
         let newSlide = document.createElement("div");
         let currentMovie = movieList[i];
         newSlide.id = currentMovie.id;
         let genres = currentMovie.genre_ids;
         let genresResult = [];
         for (let i = 0; i < (genres.length > 3 ? 3 : genres.length); i++) {
-            console.log(genresList[2].id, genres[i], "zizhgjkez");
-            console.log(searchObjectList(genresList, "id", genres[i]));
             genresResult.push(
                 genresList[
                     genresList.indexOf(
@@ -122,7 +135,9 @@ export default async function swiperFactory(
         }
         newSlide.classList.add("swiper-slide");
         newSlide.innerHTML += `
-        <img src="${imageSearchUrl + currentMovie.poster_path}" alt="barbie" />
+        <img src="${
+            imageSearchUrl + currentMovie.poster_path
+        }" alt="barbie" />
         <div class="info">
             <h3 class="hover-title">${currentMovie.original_title}</h3>
             <h4 class="hover-year">${currentMovie.release_date}</h4>
@@ -133,7 +148,6 @@ export default async function swiperFactory(
             )}</p>
         </div>
         `;
-        console.log(newSlide, "new");
         newSlide.addEventListener("click", openAndInitModalMovie);
         slideContainer.appendChild(newSlide);
     }
@@ -156,12 +170,9 @@ export function searchButton(evt) {
 }
 
 export async function populateMovieModal(id, token) {
-    console.log(id, "adzhfehsghkjhdxfklbhlkr");
     let generalInfo = queryMovieDB(movieFindUrl + id, token);
-    console.log(generalInfo);
     await generalInfo
         .then((value) => {
-            console.log(value);
             let modalOverlay = document.querySelector(".modal-movie-overlay");
             modalOverlay
                 .querySelector("#img-modal-movie")
@@ -180,7 +191,9 @@ export async function populateMovieModal(id, token) {
             placeValuesInText(
                 modalOverlay,
                 "#description-movie-modal",
-                (value.overview.length > 400) ? value.overview.substr(0, 400) + "..." : value.overview.substr(0, 400)
+                value.overview.length > 400
+                    ? value.overview.substr(0, 400) + "..."
+                    : value.overview.substr(0, 400)
             );
             placeValuesInText(
                 modalOverlay,
@@ -207,7 +220,6 @@ export async function populateMovieModal(id, token) {
 export function openRegisterModal() {
     let registerOverlay = document.querySelector(".modal-register-overlay");
     registerOverlay.style.display = "flex";
-    console.log("success");
 }
 
 function genreButtonSelect(evt) {
@@ -223,13 +235,29 @@ function genreButtonSelect(evt) {
 
 export function completeSignIn(evt) {
     evt.preventDefault();
-    let formInfo = document.querySelector(".register");
+    let formInfo = document.querySelector(".register-form");
     let username = formInfo.querySelector("[name='username']").value;
     let password = formInfo.querySelector("[name='password']").value;
     formInfo.querySelector("[name='username']").value = "";
     formInfo.querySelector("[name='password']").value = "";
     console.log(
         `Username provided is: ${username}, password provided is: ${password}.`
+    );
+    document.querySelector(".modal-register-overlay").style.display = "none";
+}
+
+export function completeSignUp(evt) {
+    evt.preventDefault();
+    let formInfo = document.querySelector(".login-form");
+    let username = formInfo.querySelector("[name='username']").value;
+    let password = formInfo.querySelector("[name='password']").value;
+    let email = formInfo.querySelector("[name='email']").value;
+    formInfo.querySelector("[name='username']").value = "";
+    formInfo.querySelector("[name='password']").value = "";
+    formInfo.querySelector("[name='email']").value = "";
+    formInfo.querySelector("[name='confPassword']").value = "";
+    console.log(
+        `Username provided is: ${username}, password provided is: ${password} and email provided is: ${email}.`
     );
     document.querySelector(".modal-register-overlay").style.display = "none";
 }
@@ -262,11 +290,48 @@ export function genreButtonFactory() {
         },
     ];
     let bigListOfGenres = document.querySelector(".genre-list");
-    console.log(bigListOfGenres);
     for (let i = 0; i < 6; i++) {
         let button = bigListOfGenres.children[i];
         let id = genres[i].id;
         button.id = id;
         button.addEventListener("click", genreButtonSelect);
+    }
+}
+
+export function openLoginRegisterForm(evt) {
+    let button = evt.currentTarget;
+    let registerForm = document.querySelector(".register-form");
+    let loginForm = document.querySelector(".login-form");
+    let btnTab = document.querySelector(".btnTab");
+    btnTab.querySelector(".active").classList.remove("active");
+    console.log(button.classList);
+    if (button.classList == "open-button-signin") {
+        btnTab.querySelector(".signup").classList.add("active");
+        registerForm.style.display = "flex";
+        loginForm.style.display = "none";
+        document.querySelector(".modal-register-overlay").style.display =
+            "flex";
+    } else {
+        btnTab.querySelector(".login").classList.add("active");
+        registerForm.style.display = "none";
+        loginForm.style.display = "flex";
+        document.querySelector(".modal-register-overlay").style.display =
+            "flex";
+    }
+}
+
+export function switchTabButton(evt) {
+    let button = evt.currentTarget;
+    let registerForm = document.querySelector(".register-form");
+    let loginForm = document.querySelector(".login-form");
+    let btnTab = document.querySelector(".btnTab");
+    btnTab.querySelector(".active").classList.remove("active");
+    button.classList.add("active");
+    if (button.classList == "signup" || button.classList == "signup active") {
+        registerForm.style.display = "flex";
+        loginForm.style.display = "none";
+    } else {
+        registerForm.style.display = "none";
+        loginForm.style.display = "flex";
     }
 }

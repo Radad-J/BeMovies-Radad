@@ -369,11 +369,11 @@ footer {
         }
 
         .register-form {
-            //display: none !important; //remove this line to dispaly flex when needed
+            //display: none ; //remove this line to dispaly flex when needed
         }
 
         .login-form {
-            display: none !important; //remove this line to dispaly flex when needed
+            display: none ; //remove this line to dispaly flex when needed // !important overrides js style changes it turns out, again to avoiding too small commits, I changed it myself
         }
 
         .register-form,

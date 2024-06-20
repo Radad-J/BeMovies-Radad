@@ -5,6 +5,7 @@ export const imageSearchUrl = imageBaseUrl + imageSize;
 export const creditsUrl = `https://api.themoviedb.org/3/movie/replaceThis/credits`
 export const genresSearchUrl = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&primary_release_date.lte=replaceDateHere&sort_by=primary_release_date.desc&vote_count.gte=100&with_genres=replaceGenreHere'
 export const latestSearchurl = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&primary_release_date.lte=replaceDateHere&sort_by=primary_release_date.desc&vote_count.gte=100'
+export const latestSearchurl2 = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=2&primary_release_date.lte=replaceDateHere&sort_by=primary_release_date.desc&vote_count.gte=100'
 export const movieFindUrl = "https://api.themoviedb.org/3/movie/"
 export const genresList =  [
       {
@@ -84,3 +85,5 @@ export const genresList =  [
         "name": "Western"
       }
 ]
+
+
