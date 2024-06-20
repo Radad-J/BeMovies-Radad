@@ -33,7 +33,6 @@ body {
 
 nav {
   background-color: #141517;
-  height: 100px;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -43,7 +42,7 @@ nav a {
 nav .nav-container {
   max-width: 1080px;
   margin: 0 auto;
-  height: 100%;
+  min-height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -60,6 +59,20 @@ nav .nav-container ul {
   gap: 30px;
   font-size: 0.9rem;
   letter-spacing: 0.4px;
+}
+nav .nav-container ul a:hover {
+  color: #C00;
+  transition: 0.3s;
+}
+nav .nav-container .menu-icon {
+  width: 40px;
+  height: 40px;
+  display: none;
+}
+nav .nav-container .close-icon {
+  width: 40px;
+  height: 40px;
+  display: none;
 }
 
 .search-bar-container {
@@ -100,6 +113,7 @@ nav .nav-container ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .search-bar-container .search-bar-box button img {
   width: 18px;
@@ -110,6 +124,7 @@ nav .nav-container ul {
   max-width: 1075px;
   margin: 0 auto;
   margin-top: 100px;
+  margin-bottom: 80px;
 }
 .results-container .search-p {
   margin: 10px;
@@ -122,7 +137,6 @@ nav .nav-container ul {
 .last-releases-container {
   max-width: 1075px;
   margin: 0 auto;
-  margin-top: 100px;
 }
 .last-releases-container .search-p,
 .last-releases-container .last-releases-p {
@@ -136,7 +150,6 @@ nav .nav-container ul {
 .results-swiper-container,
 .last-releases-swiper-container,
 .genre-swiper-container {
-  height: 350px;
   max-width: 1075px;
   margin: 0px auto;
   position: relative;
@@ -145,7 +158,6 @@ nav .nav-container ul {
 .swiper {
   position: static;
   width: 100%;
-  height: 100%;
 }
 .swiper .swiper-slide {
   text-align: center;
@@ -154,11 +166,11 @@ nav .nav-container ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .swiper .swiper-slide .swiper-slide img {
   display: block;
   width: 100%;
-  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -168,6 +180,7 @@ nav .nav-container ul {
   background-repeat: no-repeat;
   width: 20px;
   height: 20px;
+  z-index: 0;
 }
 .swiper .swiper-button-next {
   background-image: url("../images/right-arrow.svg") !important;
@@ -201,8 +214,9 @@ nav .nav-container ul {
 }
 .genre-container hr {
   color: white;
-  width: 600px;
+  max-width: 600px;
   margin: 0 auto;
+  margin-bottom: 40px;
 }
 .genre-container .genre-list-div {
   margin: 0 auto;
@@ -268,7 +282,12 @@ footer .footer-container ul {
   font-size: 0.9rem;
   letter-spacing: 0.4px;
 }
+footer .footer-container ul a:hover {
+  color: #C00;
+  transition: 0.3s;
+}
 footer .footer-container p {
+  text-transform: lowercase;
   color: #B8B8B8;
   font-size: 0.9rem;
   font-weight: 300;
@@ -278,7 +297,7 @@ footer .footer-container p {
   position: fixed;
   width: 100%;
   height: 100%;
-  top: 0;
+  top: 0px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -288,14 +307,19 @@ footer .footer-container p {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
 }
 .modal-register-overlay .modal-register {
   position: relative;
   max-width: 410px;
   min-height: 650px;
   background-color: black;
+  top: 10px;
 }
 .modal-register-overlay .modal-register .close-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
   margin-top: 10px;
   margin-left: 10px;
   width: 16px;
@@ -336,7 +360,7 @@ footer .footer-container p {
 }
 .modal-register-overlay .modal-register .register-form,
 .modal-register-overlay .modal-register .login-form {
-  padding: 50px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -439,15 +463,14 @@ footer .footer-container p {
   position: relative;
   z-index: 2;
   max-width: 740px;
-  height: 530px;
+  max-height: 530px;
   background: #141517;
   display: grid;
   gap: 40px;
   grid-template-columns: 1fr 1fr;
   color: #fff;
-  padding-top: 75px;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding: 50px 60px;
+  overflow-y: auto;
 }
 .modal-movie-overlay .modal-infos-movie .close-btn-movie {
   position: absolute;
@@ -471,7 +494,7 @@ footer .footer-container p {
   min-height: 400px;
   display: flex;
   flex-direction: column;
-  justify-items: space-between;
+  justify-content: space-around;
   gap: 15px;
 }
 .modal-movie-overlay .modal-infos-movie #infos-movie #title-movie-modal,
@@ -581,4 +604,213 @@ footer .footer-container p {
 .swiper-slide .info:hover {
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 1;
-}/*# sourceMappingURL=style.css.map */
+}
+
+@media (max-width: 1200px) {
+  nav .nav-container {
+    padding: 10px;
+    max-width: 90%;
+  }
+  .search-bar-container .search-bar-box #search-bar {
+    width: 220px;
+  }
+  .results-container,
+  .last-releases-container {
+    max-width: 85%;
+  }
+  .results-swiper-container,
+  .last-releases-swiper-container,
+  .genre-swiper-container {
+    max-width: 100%;
+  }
+  .genre-container {
+    max-width: 85%;
+  }
+  footer .footer-container {
+    max-width: 90%;
+  }
+}
+@media (max-width: 768px) {
+  .modal-infos-movie {
+    display: flex !important;
+    flex-direction: column;
+  }
+  .modal-infos-movie #description-movie-modal {
+    width: 100%;
+  }
+  nav .nav-container {
+    max-width: 90%;
+  }
+  nav .nav-container ul {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 0px;
+    right: 20%;
+    background-color: #C00;
+    padding: 40px 60px;
+    z-index: 2;
+  }
+  nav .nav-container ul li {
+    padding-bottom: 3px;
+  }
+  nav .nav-container ul a:hover {
+    color: black;
+    transition: 0.3s;
+  }
+  nav .nav-container .menu-icon {
+    display: none;
+  }
+  nav .nav-container .close-icon {
+    display: block;
+  }
+  .search-bar-container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  .search-bar-container .search-bar-box #search-bar {
+    width: 220px;
+    padding-left: 10px;
+  }
+  .search-bar-container .search-bar-box button {
+    width: 34px;
+  }
+  .search-bar-container .search-bar-box button img {
+    width: 14px;
+    height: 12px;
+  }
+  .results-container,
+  .last-releases-container {
+    margin-top: 80px;
+  }
+  .results-container,
+  .last-releases-container,
+  .genre-container {
+    max-width: 90%;
+  }
+  .results-swiper-container,
+  .last-releases-swiper-container,
+  .genre-swiper-container {
+    min-height: 300px;
+    max-width: 85% !important;
+  }
+  .genre-container {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+  .genre-container .genre-list-div {
+    justify-content: center;
+    align-items: center;
+  }
+  .genre-container .genre-list {
+    padding: 0px;
+    display: grid !important;
+    justify-items: center;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  footer {
+    min-height: 300px;
+  }
+  footer .footer-container {
+    max-width: 90%;
+  }
+  footer .footer-container ul {
+    gap: 20px;
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  .swiper-button-next {
+    right: -30px !important;
+  }
+  .swiper-button-prev {
+    left: -30px !important;
+  }
+  .search-bar-container .search-bar-box #search-bar {
+    width: 140px;
+    padding-left: 8px;
+  }
+  .search-bar-container .search-bar-box button {
+    width: 30px;
+  }
+  .search-bar-container .search-bar-box button img {
+    width: 12px;
+    height: 10px;
+  }
+  .results-container,
+  .last-releases-container {
+    margin-top: 60px;
+    margin-bottom: 100px;
+  }
+  .genre-container {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  .footer-container {
+    padding: 10px;
+    flex-direction: column !important;
+  }
+  .footer-container ul {
+    flex-direction: column;
+    padding: 0;
+  }
+}
+@media (max-width: 450px) {
+  nav .nav-container {
+    max-width: 90%;
+  }
+  nav .menu-icon {
+    width: 25px;
+    height: 25px;
+  }
+  nav .close-icon {
+    width: 25px;
+    height: 25px;
+  }
+  .search-bar-container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  .search-bar-container .search-bar-box #search-bar {
+    width: 220px;
+    padding-left: 10px;
+  }
+  .search-bar-container .search-bar-box button {
+    width: 34px;
+  }
+  .search-bar-container .search-bar-box button img {
+    width: 14px;
+    height: 12px;
+  }
+  .results-container,
+  .last-releases-container {
+    margin-top: 80px;
+  }
+  .results-container,
+  .last-releases-container,
+  .genre-container {
+    max-width: 85%;
+  }
+  .results-swiper-container,
+  .last-releases-swiper-container,
+  .genre-swiper-container {
+    min-height: 300px;
+    max-width: 80% !important;
+  }
+  .genre-container {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+  footer {
+    min-height: 300px;
+  }
+  footer .footer-container {
+    max-width: 80%;
+  }
+  footer .footer-container ul {
+    gap: 20px;
+    flex-direction: column;
+  }
+}
