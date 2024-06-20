@@ -332,7 +332,7 @@ footer .footer-container p {
   border: 1px solid #C00 !important;
 }
 .modal-register-overlay .modal-register .login-form {
-  display: none !important;
+  display: none;
 }
 .modal-register-overlay .modal-register .register-form,
 .modal-register-overlay .modal-register .login-form {
@@ -581,4 +581,4 @@ footer .footer-container p {
 .swiper-slide .info:hover {
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 1;
-}
+}/*# sourceMappingURL=style.css.map */
