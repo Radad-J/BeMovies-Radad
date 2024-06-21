@@ -162,15 +162,16 @@ nav .nav-container .close-icon {
 .swiper .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  aspect-ratio: 234/351;
 }
-.swiper .swiper-slide .swiper-slide img {
+.swiper .swiper-slide img:nth-child(1) {
   display: block;
   width: 100%;
+  height: 100% !important;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -303,7 +304,6 @@ footer .footer-container p {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -317,6 +317,7 @@ footer .footer-container p {
   top: 10px;
 }
 .modal-register-overlay .modal-register .close-button {
+  cursor: pointer;
   position: absolute;
   top: 10px;
   left: 10px;
@@ -385,11 +386,21 @@ footer .footer-container p {
   font-size: 1rem;
   padding-left: 20px;
 }
+.modal-register-overlay .modal-register .register-form #remember,
+.modal-register-overlay .modal-register .login-form #remember {
+  cursor: pointer;
+}
 .modal-register-overlay .modal-register .register-form .remember-div,
 .modal-register-overlay .modal-register .register-form .terms-conditions-div,
 .modal-register-overlay .modal-register .login-form .remember-div,
 .modal-register-overlay .modal-register .login-form .terms-conditions-div {
   width: 290px;
+}
+.modal-register-overlay .modal-register .register-form .remember-div #terms-conditions,
+.modal-register-overlay .modal-register .register-form .terms-conditions-div #terms-conditions,
+.modal-register-overlay .modal-register .login-form .remember-div #terms-conditions,
+.modal-register-overlay .modal-register .login-form .terms-conditions-div #terms-conditions {
+  cursor: pointer;
 }
 .modal-register-overlay .modal-register .register-form .remember-div label,
 .modal-register-overlay .modal-register .register-form .terms-conditions-div label,
@@ -408,6 +419,7 @@ footer .footer-container p {
   gap: 30px;
 }
 .modal-register-overlay .modal-register .bottom button {
+  cursor: pointer;
   border: none;
   outline: none;
   width: 288px;
@@ -454,10 +466,26 @@ footer .footer-container p {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
-  cursor: pointer;
   display: none;
   justify-content: center;
   align-items: center;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.modal-movie-overlay ::-webkit-scrollbar {
+  width: 7px;
+}
+.modal-movie-overlay ::-webkit-scrollbar-track {
+  background: #191B20;
+}
+.modal-movie-overlay ::-webkit-scrollbar-thumb {
+  background: #C00;
+  border-radius: 40px;
+}
+.modal-movie-overlay ::-webkit-scrollbar-thumb:hover {
+  background: rgb(164, 3, 3);
 }
 .modal-movie-overlay .modal-infos-movie {
   position: relative;
@@ -472,18 +500,21 @@ footer .footer-container p {
   padding: 50px 60px;
   overflow-y: auto;
 }
+.modal-movie-overlay .modal-infos-movie .sticky-btn {
+  position: fixed;
+  padding: 10px;
+}
 .modal-movie-overlay .modal-infos-movie .close-btn-movie {
-  position: absolute;
+  cursor: pointer;
   height: 16px;
   width: 16px;
-  left: 5px;
-  top: 5px;
+  position: relative;
 }
 .modal-movie-overlay .modal-infos-movie #img-modal-movie {
   width: 235px;
   height: 350px;
 }
-.modal-movie-overlay .modal-infos-movie #img-modal-movie #img-modal-movie img {
+.modal-movie-overlay .modal-infos-movie #img-modal-movie #img-modal-movie {
   width: 100%;
   height: 100%;
   border: 1px solid #000;
@@ -495,7 +526,6 @@ footer .footer-container p {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  gap: 15px;
 }
 .modal-movie-overlay .modal-infos-movie #infos-movie #title-movie-modal,
 .modal-movie-overlay .modal-infos-movie #infos-movie #rating-movie {
@@ -506,11 +536,13 @@ footer .footer-container p {
   font-weight: 700;
   text-align: left;
   text-transform: uppercase;
+  margin-bottom: 5px;
 }
 .modal-movie-overlay .modal-infos-movie #infos-movie #year-release-movie {
   text-align: left;
+  font-size: 14px;
   color: #fff;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .modal-movie-overlay .modal-infos-movie #infos-movie #i-star {
   width: 21px;
@@ -521,7 +553,7 @@ footer .footer-container p {
   text-align: center;
 }
 .modal-movie-overlay .modal-infos-movie #infos-movie #genre-movie-modal {
-  margin-top: 10px;
+  margin-top: 20px;
   font-weight: 700;
   text-align: left;
   color: #fff;
@@ -533,20 +565,25 @@ footer .footer-container p {
   font-weight: 300;
   text-align: left;
   color: #fff;
+  font-size: 16px;
+  line-height: 24px;
 }
 .modal-movie-overlay .modal-infos-movie #infos-movie .cast-div {
   display: flex;
   flex-direction: row;
+  margin-top: 30px;
 }
 .modal-movie-overlay .modal-infos-movie #infos-movie .cast-div #cast-txt {
   white-space: nowrap;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
   text-align: left;
   width: 39px;
   color: #fff;
 }
 .modal-movie-overlay .modal-infos-movie #infos-movie #people-cast {
+  font-weight: 300;
+  line-height: 1.2;
   margin-left: 15px;
   width: 244px;
   font-size: 14px;
@@ -635,6 +672,18 @@ footer .footer-container p {
     display: flex !important;
     flex-direction: column;
   }
+  .modal-infos-movie .sticky-btn {
+    position: fixed;
+    padding: 10px;
+  }
+  .modal-infos-movie .close-btn-movie {
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    position: relative;
+    left: -55px;
+    top: -50px;
+  }
   .modal-infos-movie #description-movie-modal {
     width: 100%;
   }
@@ -645,7 +694,7 @@ footer .footer-container p {
     display: none;
     flex-direction: column;
     gap: 20px;
-    position: absolute;
+    position: fixed;
     top: 0px;
     right: 20%;
     background-color: #C00;

@@ -179,16 +179,17 @@ nav {
     .swiper-slide {
         text-align: center;
         font-size: 18px;
-        background: #fff;
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        aspect-ratio: 234 / 351;
+        //object-fit: cover;
 
-        .swiper-slide img {
+        img:nth-child(1) {
             display: block;
             width: 100%;
-            //height: 350px;
+            height: 100% !important;
             object-fit: cover;
         }
     }
@@ -345,7 +346,6 @@ footer {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
-    cursor: pointer;
     display: flex; //it has to be flex when the modal activates
     justify-content: center;
     align-items: center;
@@ -359,6 +359,7 @@ footer {
         top: 10px;
 
         .close-button {
+            cursor: pointer;
             position: absolute;
             top: 10px;
             left: 10px;
@@ -429,9 +430,17 @@ footer {
                 padding-left: 20px;
             }
 
+            #remember {
+                cursor: pointer;
+            }
+
             .remember-div,
             .terms-conditions-div {
                 width: 290px;
+
+                #terms-conditions {
+                    cursor: pointer;
+                }
 
                 label {
                     @include textStyling (1rem, 400);
@@ -448,6 +457,7 @@ footer {
             gap: 30px;
 
             button {
+                cursor: pointer;
                 border: none;
                 outline: none;
                 width: 288px;
@@ -495,10 +505,30 @@ footer {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
-    cursor: pointer;
     display: none; //it has to be flex when the modal activates
     justify-content: center;
     align-items: center;
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: $mainPageColor;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: $red;
+        border-radius: 40px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: $secondRed;
+    }
 
     .modal-infos-movie {
         position: relative;
@@ -513,19 +543,26 @@ footer {
         padding: 50px 60px;
         overflow-y: auto;
 
+        .sticky-btn {
+            position: fixed;
+            padding: 10px;
+        }
+
         .close-btn-movie {
-            position: absolute;
+            //position: sticky;
+            cursor: pointer;
             height: 16px;
             width: 16px;
-            left: 5px;
-            top: 5px;
+            position: relative;
+            //left: -30px;
+            //top: -30px;
         }
 
         #img-modal-movie {
             width: 235px;
             height: 350px;
 
-            #img-modal-movie img {
+            #img-modal-movie {
                 width: 100%;
                 height: 100%;
                 border: 1px solid #000;
@@ -538,7 +575,6 @@ footer {
             display: flex;
             flex-direction: column;
             justify-content: space-around;
-            gap: 15px;
 
             #title-movie-modal,
             #rating-movie {
@@ -550,12 +586,14 @@ footer {
                 font-weight: 700;
                 text-align: left;
                 text-transform: uppercase;
+                margin-bottom: 5px;
             }
 
             #year-release-movie {
                 text-align: left;
+                font-size: 14px;
                 color: $white;
-                margin-bottom: 10px;
+                margin-bottom: 20px;
             }
 
             #i-star {
@@ -569,7 +607,7 @@ footer {
             }
 
             #genre-movie-modal {
-                margin-top: 10px;
+                margin-top: 20px;
                 font-weight: 700;
                 text-align: left;
                 color: $white;
@@ -582,16 +620,20 @@ footer {
                 font-weight: 300;
                 text-align: left;
                 color: $white;
+                font-size: 16px;
+                line-height: 24px;
+
             }
 
             .cast-div {
                 display: flex;
                 flex-direction: row;
+                margin-top: 30px;
 
                 #cast-txt {
                     white-space: nowrap;
                     font-size: 14px;
-                    font-weight: 700;
+                    font-weight: 400;
                     text-align: left;
                     width: 39px;
                     color: $white;
@@ -599,6 +641,8 @@ footer {
             }
 
             #people-cast {
+                font-weight: 300;
+                line-height: 1.2;
                 margin-left: 15px;
                 width: 244px;
                 font-size: 14px;
@@ -712,6 +756,21 @@ footer {
         display: flex !important;
         flex-direction: column;
 
+        .sticky-btn {
+            position: fixed;
+            padding: 10px;
+        }
+
+        .close-btn-movie {
+            //position: sticky;
+            cursor: pointer;
+            height: 16px;
+            width: 16px;
+            position: relative;
+            left: -55px;
+            top: -50px;
+        }
+
         #description-movie-modal {
             width: 100%
         }
@@ -725,7 +784,7 @@ footer {
                 display: none; //make it absolute when it appears 
                 flex-direction: column;
                 gap: 20px;
-                position: absolute;
+                position: fixed;
                 top: 0px;
                 right: 20%;
                 background-color: $red;
@@ -825,6 +884,7 @@ footer {
                 gap: 20px;
                 flex-direction: column;
                 align-items: center;
+
                 li {
                     text-align: center !important;
                 }
