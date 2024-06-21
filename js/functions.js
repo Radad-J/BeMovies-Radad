@@ -66,7 +66,10 @@ function openAndInitModalMovie(evt) {
   let button = evt.currentTarget;
   let id = button.id;
   populateMovieModal(id, authToken);
+  console.log("bingus");
   document.querySelector(".modal-movie-overlay").style.display = "flex";
+  document.querySelector(".modal-movie-overlay").style.overflow = "visible !important";
+  document.querySelector("body").style.overflow = "hidden";
 }
 
 function searchObjectList(list, key, value) {
@@ -111,7 +114,6 @@ export default async function swiperFactory(
   let swiperChosen = document.querySelector(`.${swiperSig}`);
   let slideContainer = swiperChosen.querySelector(".swiper-wrapper");
   slideContainer.innerHTML = "";
-  console.log(movieList.length);
   for (let i = 0; i < movieList.length; i++) {
     let newSlide = document.createElement("div");
     let currentMovie = movieList[i];
@@ -164,7 +166,7 @@ export function searchButton(evt) {
   document.querySelector(".results-container").style.display = "block";
 }
 
-export async function populateMovieModal(id, token) {
+async function populateMovieModal(id, token) {
   let generalInfo = queryMovieDB(movieFindUrl + id, token);
   await generalInfo
     .then((value) => {
@@ -191,9 +193,7 @@ export async function populateMovieModal(id, token) {
       placeValuesInText(
         modalOverlay,
         "#description-movie-modal",
-        value.overview.length > 400
-          ? value.overview.substr(0, 400) + "..."
-          : value.overview.substr(0, 400)
+        value.overview
       );
       placeValuesInText(
         modalOverlay,
@@ -215,7 +215,7 @@ export async function populateMovieModal(id, token) {
         result = "unknown";
       } else {
         // Loop through up to 4 elements or all elements if less than 4
-        for (let i = 0; i < Math.min(4, value.cast.length); i++) {
+        for (let i = 0; i < Math.min(100, value.cast.length); i++) {
           if (value.cast[i].name) {
             // Check if 'name' property exists
             castMembers.push(value.cast[i].name);
@@ -267,19 +267,33 @@ export function completeSignIn(evt) {
 }
 
 export function completeSignUp(evt) {
+  const regexEmail = /[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   evt.preventDefault();
   let formInfo = document.querySelector(".register-form");
   let username = formInfo.querySelector("[name='username']").value;
   let password = formInfo.querySelector("[name='password']").value;
+  let passwordConf = formInfo.querySelector("[name='confPassword']").value;
   let email = formInfo.querySelector("[name='email']").value;
+  let termsConditions = formInfo.querySelector("[name='terms-conditions']").checked;
   formInfo.querySelector("[name='username']").value = "";
   formInfo.querySelector("[name='password']").value = "";
   formInfo.querySelector("[name='email']").value = "";
   formInfo.querySelector("[name='confPassword']").value = "";
-  console.log(
-    `Username provided is: ${username}, password provided is: ${password} and email provided is: ${email}.`
-  );
-  document.querySelector(".modal-register-overlay").style.display = "none";
+  let check1 = (username.length > 6 && username.length < 21) ? "" : "Username has to be between 7 and 20 characters long. \n"
+  let check2 = (email.match(regexEmail) && email.match(regexEmail)[0] == email) ? "" : "Email has to be a valid email address. \n"
+  let check3 = (password.length > 10) ? "" : "Password has to be at least 10 characters long. \n"
+  let check4 = (passwordConf == password && passwordConf.length > 10) ? "" : "Password confirmation has to be identical to password. \n"
+  let check5 = (termsConditions) ? "" : "You need to accept our terms and conditions."
+  let bigCheck = check1 + check2 + check3 + check4 + check5;
+  if (bigCheck) {
+    alert(bigCheck);
+  }
+  else {
+    console.log(
+      `Username provided is: ${username}, password provided is: ${password} and email provided is: ${email}.`
+    );
+    document.querySelector(".modal-register-overlay").style.display = "none";
+  }
 }
 
 export function genreButtonFactory() {
@@ -367,3 +381,18 @@ export function switchTabButton(evt) {
 document.querySelector(".close-button").addEventListener("click", () => {
   document.querySelector(".modal-register-overlay").style.display = "none";
 });
+
+
+export function burgerButton(evt) {
+  let btn = evt.currentTarget;
+  if (btn.classList == "menu-icon") {
+    btn.parentElement.querySelector("ul").style.display = "flex";
+    btn.parentElement.querySelector(".close-icon").style.display = "block";
+    btn.style.display = "none"
+  }
+  else {
+    btn.parentElement.querySelector("ul").style.display = "none";
+    btn.parentElement.querySelector(".menu-icon").style.display = "block";
+    btn.style.display = "none"
+  }
+}
