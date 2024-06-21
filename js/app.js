@@ -9,6 +9,7 @@ import {
   initSwiper,
   openLoginRegisterForm,
   switchTabButton,
+  burgerButton,
 } from "./functions.js";
 
 initSwiper();
@@ -18,8 +19,9 @@ swiperFactory("latest", authToken, "last-releases-swiper-container");
 document.querySelector(".results-container").style.display = "none";
 
 //hack, change later
-document.querySelector(".close-btn-movie").addEventListener("click", (evt) => {
+document.querySelector(".close-btn-movie").addEventListener("click", () => {
   document.querySelector(".modal-movie-overlay").style.display = "none";
+  document.querySelector("body").style.overflow = "visible";
 });
 
 document.querySelector("#submit-btn").addEventListener("click", searchButton);
@@ -70,3 +72,11 @@ notMemberYetButton.addEventListener("click", () => {
 
 document.querySelector(".login_btn").addEventListener("click", completeSignIn);
 document.querySelector(".signup_btn").addEventListener("click", completeSignUp);
+
+
+let menuIcon = document.querySelector(".menu-icon");
+let closeIcon = document.querySelector(".close-icon");
+
+[menuIcon, closeIcon].forEach((elem) => {
+  elem.addEventListener("click", burgerButton);
+})
