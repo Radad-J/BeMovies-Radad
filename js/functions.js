@@ -67,7 +67,8 @@ function openAndInitModalMovie(evt) {
   let id = button.id;
   populateMovieModal(id, authToken);
   document.querySelector(".modal-movie-overlay").style.display = "flex";
-  document.querySelector(".modal-movie-overlay").style.overflow = "auto !important";
+  document.querySelector(".modal-movie-overlay").style.overflow =
+    "auto !important";
   document.querySelector("body").style.overflow = "hidden";
 }
 
@@ -85,7 +86,7 @@ function placeValuesInText(parentElem, selector, textValue) {
   } else if (typeof textValue == "object") {
     let tempTextValue = textValue[0].name;
     if (textValue.length > 1) {
-      tempTextValue += "/" + textValue[1].name;
+      tempTextValue += " / " + textValue[1].name;
     }
     textValue = tempTextValue;
   }
@@ -125,7 +126,6 @@ export default async function swiperFactory(
           genresList.indexOf(searchObjectList(genresList, "id", genres[i]))
         ].name
       );
-      genresResult.join(" / ");
     }
     newSlide.classList.add("swiper-slide");
     // Check if poster_path is null or undefined
@@ -141,8 +141,8 @@ export default async function swiperFactory(
     }" />
         <div class="info">
             <h3 class="hover-title">${currentMovie.original_title}</h3>
-            <h4 class="hover-year">${currentMovie.release_date}</h4>
-            <p class="hover-genre">${genresResult}</p>
+            <h4 class="hover-year">${currentMovie.release_date.slice(0, 4)}</h4>
+            <p class="hover-genre">${genresResult.join(" / ")}</p>
             <img class="hover-star" src="./images/star.svg" alt="star" />
             <p class="hover-score">${currentMovie.vote_average.toPrecision(
               2
@@ -273,21 +273,36 @@ export function completeSignUp(evt) {
   let password = formInfo.querySelector("[name='password']").value;
   let passwordConf = formInfo.querySelector("[name='confPassword']").value;
   let email = formInfo.querySelector("[name='email']").value;
-  let termsConditions = formInfo.querySelector("[name='terms-conditions']").checked;
+  let termsConditions = formInfo.querySelector(
+    "[name='terms-conditions']"
+  ).checked;
   formInfo.querySelector("[name='username']").value = "";
   formInfo.querySelector("[name='password']").value = "";
   formInfo.querySelector("[name='email']").value = "";
   formInfo.querySelector("[name='confPassword']").value = "";
-  let check1 = (username.length > 6 && username.length < 21) ? "" : "Username has to be between 7 and 20 characters long. \n"
-  let check2 = (email.match(regexEmail) && email.match(regexEmail)[0] == email) ? "" : "Email has to be a valid email address. \n"
-  let check3 = (password.length > 10) ? "" : "Password has to be at least 10 characters long. \n"
-  let check4 = (passwordConf == password && passwordConf.length > 10) ? "" : "Password confirmation has to be identical to password. \n"
-  let check5 = (termsConditions) ? "" : "You need to accept our terms and conditions."
+  let check1 =
+    username.length > 6 && username.length < 21
+      ? ""
+      : "Username has to be between 7 and 20 characters long. \n";
+  let check2 =
+    email.match(regexEmail) && email.match(regexEmail)[0] == email
+      ? ""
+      : "Email has to be a valid email address. \n";
+  let check3 =
+    password.length > 10
+      ? ""
+      : "Password has to be at least 10 characters long. \n";
+  let check4 =
+    passwordConf == password && passwordConf.length > 10
+      ? ""
+      : "Password confirmation has to be identical to password. \n";
+  let check5 = termsConditions
+    ? ""
+    : "You need to accept our terms and conditions.";
   let bigCheck = check1 + check2 + check3 + check4 + check5;
   if (bigCheck) {
     alert(bigCheck);
-  }
-  else {
+  } else {
     console.log(
       `Username provided is: ${username}, password provided is: ${password} and email provided is: ${email}.`
     );
@@ -381,18 +396,16 @@ document.querySelector(".close-button").addEventListener("click", () => {
   document.querySelector(".modal-register-overlay").style.display = "none";
 });
 
-
 export function burgerButton(evt) {
   let btn = evt.currentTarget;
   if (btn.classList == "menu-icon") {
     btn.parentElement.querySelector("ul").style.display = "flex";
     btn.parentElement.querySelector(".close-icon").style.display = "block";
-    btn.style.display = "none"
-  }
-  else {
+    btn.style.display = "none";
+  } else {
     btn.parentElement.querySelector("ul").style.display = "none";
     btn.parentElement.querySelector(".menu-icon").style.display = "block";
-    btn.style.display = "none"
+    btn.style.display = "none";
   }
 }
 
@@ -404,8 +417,7 @@ export function handleResize() {
     menuIcon.style.display = "none";
     closeIcon.style.display = "none";
     navMenu.style.display = "flex";
-  }
-  else {
+  } else {
     menuIcon.style.display = "block";
     closeIcon.style.display = "none";
     navMenu.style.display = "none";
