@@ -743,11 +743,12 @@ footer {
             }
 
             .menu-icon {
-                display: none;
+                display: block;
+                //switching around the default behaviour in the media query, since it'd be a 2 line commit otherwise
             }
 
             .close-icon {
-                display: block;
+                display: none;
             }
         }
     }

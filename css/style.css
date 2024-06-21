@@ -660,10 +660,10 @@ footer .footer-container p {
     transition: 0.3s;
   }
   nav .nav-container .menu-icon {
-    display: none;
+    display: block;
   }
   nav .nav-container .close-icon {
-    display: block;
+    display: none;
   }
   .search-bar-container {
     max-width: 100%;
@@ -813,4 +813,4 @@ footer .footer-container p {
     gap: 20px;
     flex-direction: column;
   }
-}
+}/*# sourceMappingURL=style.css.map */
