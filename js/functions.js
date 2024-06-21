@@ -66,9 +66,8 @@ function openAndInitModalMovie(evt) {
   let button = evt.currentTarget;
   let id = button.id;
   populateMovieModal(id, authToken);
-  console.log("bingus");
   document.querySelector(".modal-movie-overlay").style.display = "flex";
-  document.querySelector(".modal-movie-overlay").style.overflow = "visible !important";
+  document.querySelector(".modal-movie-overlay").style.overflow = "auto !important";
   document.querySelector("body").style.overflow = "hidden";
 }
 
@@ -394,5 +393,21 @@ export function burgerButton(evt) {
     btn.parentElement.querySelector("ul").style.display = "none";
     btn.parentElement.querySelector(".menu-icon").style.display = "block";
     btn.style.display = "none"
+  }
+}
+
+export function handleResize() {
+  let menuIcon = document.querySelector(".menu-icon");
+  let closeIcon = document.querySelector(".close-icon");
+  let navMenu = document.querySelector(".nav-container ul");
+  if (window.innerWidth > 768) {
+    menuIcon.style.display = "none";
+    closeIcon.style.display = "none";
+    navMenu.style.display = "flex";
+  }
+  else {
+    menuIcon.style.display = "block";
+    closeIcon.style.display = "none";
+    navMenu.style.display = "none";
   }
 }

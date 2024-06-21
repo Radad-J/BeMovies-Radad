@@ -10,6 +10,7 @@ import {
   openLoginRegisterForm,
   switchTabButton,
   burgerButton,
+  handleResize,
 } from "./functions.js";
 
 initSwiper();
@@ -57,13 +58,24 @@ let switchTabButtons = document.querySelector(".btnTab").querySelectorAll("a");
 switchTabButtons.forEach((element) => {
   element.addEventListener("click", switchTabButton);
 });
-
+let alreadyMemberButton = document
+  .querySelector(".register-form")
+  .querySelector(".bottom")
+  .querySelector(".login-reminder")
+  .querySelector("p")
+  .querySelector("a");
 let notMemberYetButton = document
   .querySelector(".bottom")
   .querySelector(".signup")
   .querySelector("p")
   .querySelector("a");
 notMemberYetButton.addEventListener("click", () => {
+  registerOverlay.querySelector(".active").classList.remove("active");
+  registerOverlay.querySelector(".signup").classList.add("active");
+  registerOverlay.querySelector(".login-form").style.display = "none";
+  registerOverlay.querySelector(".register-form").style.display = "flex";
+});
+alreadyMemberButton.addEventListener("click", () => {
   registerOverlay.querySelector(".active").classList.remove("active");
   registerOverlay.querySelector(".login").classList.add("active");
   registerOverlay.querySelector(".register-form").style.display = "none";
@@ -80,3 +92,6 @@ let closeIcon = document.querySelector(".close-icon");
 [menuIcon, closeIcon].forEach((elem) => {
   elem.addEventListener("click", burgerButton);
 })
+
+window.addEventListener('resize', handleResize);
+handleResize();
