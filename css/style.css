@@ -31,6 +31,27 @@ body {
   background-color: #191B20;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #191B20;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #C00;
+  border-radius: 40px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(164, 3, 3);
+}
+
 nav {
   background-color: #141517;
   text-transform: uppercase;
@@ -469,23 +490,6 @@ footer .footer-container p {
   display: none;
   justify-content: center;
   align-items: center;
-  /* width */
-  /* Track */
-  /* Handle */
-  /* Handle on hover */
-}
-.modal-movie-overlay ::-webkit-scrollbar {
-  width: 7px;
-}
-.modal-movie-overlay ::-webkit-scrollbar-track {
-  background: #191B20;
-}
-.modal-movie-overlay ::-webkit-scrollbar-thumb {
-  background: #C00;
-  border-radius: 40px;
-}
-.modal-movie-overlay ::-webkit-scrollbar-thumb:hover {
-  background: rgb(164, 3, 3);
 }
 .modal-movie-overlay .modal-infos-movie {
   position: relative;
