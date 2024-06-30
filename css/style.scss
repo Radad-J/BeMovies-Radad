@@ -34,6 +34,27 @@ body {
     background-color: $mainPageColor;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: $mainPageColor;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $red;
+    border-radius: 40px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $secondRed;
+}
+
 //nav 
 nav {
     background-color: $navBottomColor;
@@ -508,27 +529,6 @@ footer {
     display: none; //it has to be flex when the modal activates
     justify-content: center;
     align-items: center;
-
-    /* width */
-    ::-webkit-scrollbar {
-        width: 7px;
-    }
-
-    /* Track */
-    ::-webkit-scrollbar-track {
-        background: $mainPageColor;
-    }
-
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-        background: $red;
-        border-radius: 40px;
-    }
-
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-        background: $secondRed;
-    }
 
     .modal-infos-movie {
         position: relative;
